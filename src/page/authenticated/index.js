@@ -18,14 +18,11 @@ export default class Authenticated extends Component {
           console.log(user)
           let  token = user
           console.log(token)
-          let config = {
-          headers: { 'Authorization':"jwt " + token, 'Access-Control-Allow-Origin': '*'}
-          };
-          console.log(config)
 
 
 
-            const response = await api.get(`/authenticated-route`, {}, config);
+         
+            const response = await api.get(`/authenticated-route`, {headers: { 'Authorization':`Bearer ${token}`, 'Access-Control-Allow-Origin': '*'}});
              this.setState({res: response.data })
           } catch (error) {
             this.setState({res: "Erro ao fazer requisição"})
