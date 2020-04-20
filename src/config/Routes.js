@@ -9,6 +9,7 @@ import Dashboard from '../page/dashboard/index';
 import NotFound from '../page/not-found';
 import Authenticated from '../page/authenticated/index';
 import Unauthenticated from '../page/unauthenticated/index';
+import Register from '../page/register/index';
 
 
 const Routes = () => (
@@ -16,6 +17,7 @@ const Routes = () => (
         <Switch>
             <Route exact path="/unauthenticated" component={Unauthenticated}/>
             <Route exact path="/authenticated" component={Authenticated}/>
+            <Route exact path="/register" component={Register}/>
             <PrivateRoute exact path="/dashboard" component={Dashboard}/>
             <Route exact path="/" component={Login}/>
             <PrivateRoute component={NotFound}/>
